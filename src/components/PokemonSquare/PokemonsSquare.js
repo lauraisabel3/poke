@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { getPokes } from '../../services'
-import cloud from '../../assets/cloud.jpg'
 import './styles.css'
 
 const PokemonSquare = ({ seconds, reload }) => {
     const [counter, setCounter] = useState(seconds)
     const [poke, setPoke] = useState({})
     const interval = seconds * 1000
+
     function random(min, max) {
         return Math.floor((Math.random() * (max - min + 1)) + min);
     }
 
     const getPokemonsInfo = async () => {
         const response = await getPokes({ id: random(1, 100) })
-        console.log('set')
         setPoke(response)
     }
 
@@ -22,7 +21,6 @@ const PokemonSquare = ({ seconds, reload }) => {
             setCounter((prevCounter) => prevCounter + 1)
         }, interval);
 
-        // Limpiar el intervalo cuando el componente se desmonta
         return () => clearInterval(intervalId);
     }, [interval])
 
