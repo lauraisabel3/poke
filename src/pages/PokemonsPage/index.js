@@ -1,0 +1,1 @@
+export { PokeMonPage } from './PokemonPage'

@@ -1,0 +1,12 @@
+.main-container {
+    width: 1200px;
+    margin: 40px auto;
+}
+
+.pokemons-container {
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+    border: 4px solid gray;
+}

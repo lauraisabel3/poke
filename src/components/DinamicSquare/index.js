@@ -1,0 +1,1 @@
+export { DinamicSquare } from './DinamicSquare'
