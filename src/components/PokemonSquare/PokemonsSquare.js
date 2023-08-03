@@ -13,12 +13,13 @@ const PokemonSquare = ({ seconds, reload }) => {
 
     const getPokemonsInfo = async () => {
         const response = await getPokes({ id: random(1, 100) })
+        console.log('set')
         setPoke(response)
     }
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setCounter((prevCounter) => prevCounter + 1);
+            setCounter((prevCounter) => prevCounter + 1)
         }, interval);
 
         // Limpiar el intervalo cuando el componente se desmonta
@@ -31,6 +32,7 @@ const PokemonSquare = ({ seconds, reload }) => {
     return (
         <div className='container-pokemon'>
             <p>{poke.name}</p>
+            <p>Segundos: {seconds}</p>
             <div className='cloud-container'>
                 {poke !== {} && <img src={poke?.sprites?.front_default} alt='Pokemon img' className='cloud-img' />}
             </div>
